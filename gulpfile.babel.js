@@ -323,14 +323,17 @@ gulp.task('browsersync', () => {
     browsersync(syncOpts);
 });
 
-// default task
-gulp.task('default', [
+// build the pages and assets
+gulp.task('build', [
     'html',
     'images',
     'fonts',
     'css',
     'js'
-], () => {
+]);
+
+// default task
+gulp.task('watch', ['build'], () => {
     // run the server
     browserSync(syncOpts);
 
