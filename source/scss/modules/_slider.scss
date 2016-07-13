@@ -1,0 +1,39 @@
+.slider {
+    flex: 1;
+    justify-content: center;
+    background-color: $slider-bg-color;
+
+    &__frame {
+        position: relative;
+        display: inline-block;
+        padding: $slider-frame-padding;
+        border-radius: 0.75rem;
+        background-color: $slider-frame-color;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            background-color: transparent;
+            box-shadow: inset 0 0 0 2px $slider-bg-color;
+        }
+
+        &::before {
+            top: 0.75rem;
+            width: 2.5rem;
+            height: 0.4rem;
+            margin-left: -1.25rem;
+            border-radius: 1rem;
+        }
+
+        &::after {
+            bottom: 0.7rem;
+            width: 1.85rem;
+            height: 1.85rem;
+            margin-left: -1rem;
+            border-radius: 50%;
+        }
+    }
+}
+

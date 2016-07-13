@@ -1,18 +1,26 @@
 .flex {
     display: flex;
 
-    &--rows {
+    &--row {
         flex-direction: row;
     }
 
-    &--columns {
+    &--column {
         flex-direction: column;
     }
 
     &__item {
         min-width: 0;
+        flex-shrink: 1;
+        flex-basis: 0;
 
-        &--grow {
+        @for $i from 1 through 10 {
+            &--grow-#{$i} {
+                flex-grow: #{$i};
+            }
+        }
+
+        &--grow-equal {
             flex-grow: 1;
         }
 
@@ -20,7 +28,6 @@
             flex-shrink: 0;
         }
     }
-
 
     &--align {
         &-middle {
