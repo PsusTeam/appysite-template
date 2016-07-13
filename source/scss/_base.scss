@@ -1,0 +1,26 @@
+// ==========================================================================
+//    IE10 and Windows Phone viewport issue
+// ==========================================================================
+
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
+
+// ==========================================================================
+//    Setting up font faces
+// ==========================================================================
+
+@include font-face("Roya", "BRoya", normal, normal, '../fonts');
+@include font-face("Roya", "BRoyaBold", normal, bold, '../fonts');
+
+// ==========================================================================
+//    Zurb Foundation Customization
+// ==========================================================================
+
+// form fields
+input:not(.button).large {
+	height: $input-height-large;
+	font-size: $input-font-size-large;
+}

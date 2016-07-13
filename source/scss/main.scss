@@ -1,0 +1,21 @@
+// the zurb foundation
+@import "foundation/settings";
+@import "foundation/foundation";
+
+// the author variables
+@import "variables";
+
+@import "mixins/mixins";
+
+// modernizr mixins within bower_components
+@import "modernizr";
+
+// the helper classes / placeholders
+@import "helpers";
+
+// base rules
+@import "base";
+
+// the modules
+@import "modules/flex";
+// other modules here...

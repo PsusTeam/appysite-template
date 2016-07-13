@@ -1,0 +1,14 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noodp,noydir">
+<link rel="canonical" href="<!-- @echo url -->">
+<link rel="stylesheet" href="<!-- @echo cssPath --><!-- @echo cssFile -->">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+<!-- @if !devBuild -->
+<script src="<!-- @echo jsPath --><!-- @echo jsHeadFile -->"></script>
+<!-- @endif -->
+<!-- @if devBuild -->
+<!-- @foreach $script in devHeadScripts -->
+<script src="<!-- @echo jsPath -->$script"></script>
+<!-- @endfor -->
+<!-- @endif -->

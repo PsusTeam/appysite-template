@@ -1,0 +1,25 @@
+{
+  "name": "appysite-default-theme",
+  "authors": [
+    "Hashem Qolami <hashem@qolami.com>"
+  ],
+  "description": "The default theme of the AppySite service",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-sites": "~6.2.0"
+  },
+  "devDependencies": {
+    "modernizr-mixin": "^3.0.7"
+  }
+}

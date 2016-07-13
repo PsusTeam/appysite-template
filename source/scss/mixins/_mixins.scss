@@ -1,0 +1,69 @@
+// Font-face mixin
+@mixin font-face($family, $filename, $style: normal, $weight: normal, $folder: 'fonts') {
+    @font-face {
+        font-family: $family;
+        src: url('#{$folder}/#{$filename}.eot');
+        src: url('#{$folder}/#{$filename}.eot?#iefix') format("embedded-opentype"),
+             url('#{$folder}/#{$filename}.woff2') format("woff2"),
+             url('#{$folder}/#{$filename}.woff') format("woff"),
+             url('#{$folder}/#{$filename}.ttf') format("truetype"),
+             url('#{$folder}/#{$filename}.svg##{$filename}') format("svg");
+
+        font-style  : $style;
+        font-weight : $weight;
+    }
+}
+
+// Typography
+@mixin ellipsis() {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+//////////
+// Misc //
+//////////
+
+@mixin no-csstransforms() {
+    .no-csstransforms & {
+        @content;
+    }
+}
+
+@mixin link-color(
+    $link: null,
+    $hover: null,
+    $visited: null,
+    $active: null,
+    $dec: null,
+    $dec-hover: null) {
+        color: $link;
+        text-decoration: $dec;
+
+        &:visited {
+            color: $visited;
+        }
+        
+        &:hover,
+        &:focus {
+            color: $hover;
+            text-decoration: $dec-hover;
+        }
+
+        &:active {
+            color: $active;
+        }
+}
+
+// image url helper function to be used in background, content, etc.
+@function img-url($url) {
+    @return url("#{$image-url-path}#{$url}");
+}
+
+// RTL Mode
+//@mixin rtl() {
+//    @at-root [dir=rtl] & {
+//        @content;
+//    }
+//}

@@ -1,0 +1,6 @@
+<!-- @if devBuild && devScripts.length -->
+<!-- @foreach $script in devScripts -->
+<script src="<!-- @echo jsPath -->$script"></script>
+<!-- @endfor -->
+<!-- @endif -->
+<script src="<!-- @echo jsPath --><!-- @echo jsFile -->"></script>

@@ -1,0 +1,84 @@
+//////////////////////////////////////////
+// Class placeholders, to be @extend-ed //
+//////////////////////////////////////////
+
+// Positioning
+@each $i in (1, 5, 10, 20, 50, 100, 200, 500, 1000, 9999) {
+    %z-#{$i} {
+        z-index: $i;
+    }
+}
+
+// Box Model
+%inline-block {
+    display: inline-block;
+}
+
+// Responsive margin/padding remover
+@each $prop in (margin, padding) {
+    .no-#{$prop} {
+        #{$prop}: 0;
+    }
+
+    @each $bpc in $breakpoint-classes {
+        @include breakpoint($bpc only) {
+            .no-#{$prop}-#{$bpc} {
+                #{$prop}: 0;
+            }
+        }
+    }
+}
+
+// Typography
+
+// lists
+%list {
+    // the bullets
+    &-clean {
+        list-style: none;
+    }
+
+    // makes the list inline
+    &-inline {
+        > li {
+            @extend %inline-block;
+            vertical-align: top;
+        }
+    }
+
+    // removes margin of list items from the sides
+    &-sides {
+        > li {
+            &:first-child {
+                margin-right: 0;
+            }
+
+            &:last-child {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+%clean-link {
+    &,
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+// Alignment
+%align-y-middle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: translate3d(0, -50%, 0);
+}
+
+%align-x-middle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
+}

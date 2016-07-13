@@ -1,0 +1,30 @@
+.flex {
+    display: flex;
+
+    &--rows {
+        flex-direction: row;
+    }
+
+    &--columns {
+        flex-direction: column;
+    }
+
+    &__item {
+        min-width: 0;
+
+        &--grow {
+            flex-grow: 1;
+        }
+
+        &--no-shrink {
+            flex-shrink: 0;
+        }
+    }
+
+
+    &--align {
+        &-middle {
+            align-items: center;
+        }
+    }
+}
