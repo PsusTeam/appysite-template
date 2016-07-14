@@ -66,6 +66,7 @@ let
             outputStyle: 'expanded',
             imagePath: 'images',
             includePaths: [
+                'bower_components',
                 'bower_components/foundation-sites/scss',
                 'bower_components/modernizr-mixin/stylesheets'
             ],
@@ -87,7 +88,8 @@ let
 
     fonts = {
         in  : [
-            files.fonts + '*.*'
+            files.fonts + '*.*',
+            'bower_components/font-awesome/fonts/*.*'
         ],
         out : dest + 'fonts/'
     },

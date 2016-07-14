@@ -17,7 +17,8 @@
     "tests"
   ],
   "dependencies": {
-    "foundation-sites": "~6.2.0"
+    "foundation-sites": "~6.2.0",
+    "font-awesome": "^4.6.3"
   },
   "devDependencies": {
     "modernizr-mixin": "^3.0.7"
