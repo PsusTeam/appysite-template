@@ -319,8 +319,8 @@ gulp.task('js', ['foundation'], () => {
 });
 
 // browser sync
-gulp.task('browsersync', () => {
-    browsersync(syncOpts);
+gulp.task('serve', () => {
+    browserSync(syncOpts);
 });
 
 // build the pages and assets
@@ -332,11 +332,11 @@ gulp.task('build', [
     'js'
 ]);
 
-// default task
-gulp.task('watch', ['build'], () => {
-    // run the server
-    browserSync(syncOpts);
+// the default task
+gulp.task('default', ['build', 'serve']);
 
+// watch the changes
+gulp.task('watch', ['default'], () => {
     // html changes
     gulp.watch(html.watch, ['html', browserSync.reload]);
 
