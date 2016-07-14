@@ -1,0 +1,9 @@
+.controls {
+    @extend %list-clean;
+    @extend %list-inline;
+    @extend %list-inline--spaced;
+
+    &__link {
+        @include link-color($control-link-color);
+    }
+}
