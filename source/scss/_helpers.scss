@@ -31,6 +31,13 @@
 
 // Typography
 
+// text colors
+@each $color, $value in $foundation-palette {
+    .text-#{$color} {
+        color: $value;
+    }
+}
+
 // lists
 %list {
     // the bullets
@@ -43,6 +50,15 @@
         > li {
             @extend %inline-block;
             vertical-align: top;
+        }
+
+        &--spaced {
+            margin-left: -.35rem;
+            margin-right: -.35rem;
+
+            > li {
+                margin: 0 .35rem;
+            }
         }
     }
 

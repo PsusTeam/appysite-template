@@ -2,6 +2,9 @@
 @import "foundation/settings";
 @import "foundation/foundation";
 
+// the font awesome
+@import "font-awesome/font-awesome";
+
 // the author variables
 @import "variables";
 
@@ -16,6 +19,10 @@
 // base rules
 @import "base";
 
+// the components
+@import "components/flex";
+@import "components/controls";
+
 // the modules
-@import "modules/flex";
 @import "modules/slider";
+@import "modules/content";

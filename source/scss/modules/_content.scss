@@ -1,0 +1,27 @@
+.content {
+    padding: $content-padding-small;
+
+    @include breakpoint(medium) {
+        padding: $content-padding-medium;
+    }
+
+    @include breakpoint(large) {
+        padding: $content-padding-large;
+    }
+
+    &__body {
+        max-width: rem-calc(600);
+    }
+
+    &__heading {
+        margin: 0 0 rem-calc(34) 0;
+        font-size: rem-calc(20);
+    }
+
+    &__slogan {
+        font-size: rem-calc(40);
+        line-height: 1.4;
+        margin: 0 0 rem-calc(32);
+        color: $slogan-color;
+    }
+}

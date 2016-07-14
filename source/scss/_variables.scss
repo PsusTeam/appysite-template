@@ -5,6 +5,7 @@
 //
 //   1. global
 //   2. slider
+//   3. content
 
 // 1. Global
 // -------------
@@ -16,9 +17,22 @@ $gp-image-url-path: '../images/';
 $input-height-large: 3.5rem;
 $input-font-size-large: rem-calc(20);
 
+// colors
+$slogan-color: #74797f;
 
-// 2. slider
+// components
+$control-link-color: #e6e8eb;
+
+
+// 2. Slider
 // -------------
 $slider-bg-color: map-get($foundation-palette, asphalt);
 $slider-frame-color: white;
 $slider-frame-padding: 1.85rem 0.5rem 3.25rem 0.5rem;
+
+
+// 3. Content
+// -------------
+$content-padding-large: 4.5rem 4.5rem 2.5rem;
+$content-padding-medium: 4rem 4rem 2rem;
+$content-padding-small: 3rem 2rem 1rem;
