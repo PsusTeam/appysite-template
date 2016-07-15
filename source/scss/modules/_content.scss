@@ -1,8 +1,10 @@
 .content {
     padding: $content-padding-small;
+    text-align: center;
 
     @include breakpoint(medium) {
         padding: $content-padding-medium;
+        text-align: right;
     }
 
     @include breakpoint(large) {
@@ -14,14 +16,40 @@
     }
 
     &__heading {
-        margin: 0 0 rem-calc(34) 0;
-        font-size: rem-calc(20);
+        margin: 0 0 1rem 0;
+        font-size: rem-calc(22);
+
+        @include breakpoint(medium) {
+            margin-bottom: rem-calc(34);
+        }
     }
 
     &__slogan {
-        font-size: rem-calc(40);
+        margin: 0 0 rem-calc(24) 0;
+        font-size: 1.5rem;
         line-height: 1.4;
-        margin: 0 0 rem-calc(32);
         color: $slogan-color;
+
+        @include breakpoint(medium) {
+            font-size: rem-calc(40);
+            margin-bottom: rem-calc(34);
+        }
+    }
+
+    &__download-btn {
+        margin-bottom: $paragraph-margin-bottom;
+        width: 100%;
+
+        @include breakpoint(medium) {
+            width: auto;
+        }
+    }
+
+    &__socials {
+        margin-bottom: $paragraph-margin-bottom;
+
+        @include breakpoint(medium) {
+            margin-bottom: 0;
+        }
     }
 }

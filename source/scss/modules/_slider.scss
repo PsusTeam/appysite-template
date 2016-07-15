@@ -1,11 +1,28 @@
 .slider {
+    padding: $slider-padding;
     flex: 1;
     justify-content: center;
     background-color: $slider-bg-color;
-
+    overflow: hidden;
+    
     &__frame {
         position: relative;
-        display: inline-block;
+        
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 2%;
+            left: 0;
+            width: 9999px;
+            height: 108%;
+            background-color: $slider-shadow-color;
+            transform-origin: 0 100%;
+            transform: rotate(.44rad) skewY(15deg);
+        }
+    }
+
+    &__body {
+        position: relative;
         padding: $slider-frame-padding;
         border-radius: 0.75rem;
         background-color: $slider-frame-color;

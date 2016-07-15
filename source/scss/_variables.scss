@@ -19,6 +19,7 @@ $input-font-size-large: rem-calc(20);
 
 // colors
 $slogan-color: #74797f;
+$metafizzy-color: #dde0e4;
 
 // components
 $control-link-color: #e6e8eb;
@@ -26,9 +27,11 @@ $control-link-color: #e6e8eb;
 
 // 2. Slider
 // -------------
+$slider-padding: 1rem;
 $slider-bg-color: map-get($foundation-palette, asphalt);
 $slider-frame-color: white;
-$slider-frame-padding: 1.85rem 0.5rem 3.25rem 0.5rem;
+$slider-frame-padding: 1.85rem 0.5rem 3.25rem;
+$slider-shadow-color: $metafizzy-color;
 
 
 // 3. Content

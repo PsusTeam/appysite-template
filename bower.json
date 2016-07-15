@@ -21,6 +21,7 @@
     "font-awesome": "^4.6.3"
   },
   "devDependencies": {
-    "modernizr-mixin": "^3.0.7"
+    "modernizr-mixin": "^3.0.7",
+    "mathsass": "^0.9.5"
   }
 }
