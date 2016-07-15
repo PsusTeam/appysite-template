@@ -1,3 +1,7 @@
+// the math functions
+//@import "math";
+//@TODO adding trigonometry functions -> drawing the frame shadow programmatically
+
 // Font-face mixin
 @mixin font-face($family, $filename, $style: normal, $weight: normal, $folder: 'fonts') {
     @font-face {

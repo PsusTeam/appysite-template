@@ -1,0 +1,87 @@
+// credits: http://thesassway.com/advanced/inverse-trigonometric-functions-with-sass
+// @thebabydino
+
+@function pi() {
+    @return 3.14;
+}
+
+@function pow($number, $exp) {
+    $value: 1;
+    @if $exp > 0 {
+        @for $i from 1 through $exp {
+            $value: $value * $number;
+        }
+    }
+    @else if $exp < 0 {
+        @for $i from 1 through -$exp {
+            $value: $value / $number;
+        }
+    }
+    @return $value;
+}
+
+
+
+$default-threshold: pi()/180/20;
+
+@function convert-angle($value, $unit-name) {
+    $factors: (
+            rad: 1rad,
+            deg: 180deg/pi(),
+            grad: 200grad/pi(),
+            turn: .5turn/pi()
+    );
+
+    @if not unitless($value) {
+        @warn '`#{$value}` should be unitless';
+        @return false;
+    }
+
+    @if not map-has-key($factors, $unit-name) {
+        @warn 'unit `#{$unit-name}` is not a valid unit - please make sure it is either `deg`, `rad`, `grad` or `turn`';
+        @return false;
+    }
+
+    @return $value*map-get($factors, $unit-name);
+}
+
+@function asin($z, $unit-name: deg, $threshold: $default-threshold) {
+    $sum: 0;
+    $complement: false;
+    $sign: if($z != 0, $z/abs($z), 1);
+    $z: abs($z);
+
+    @if $z > 1 {
+        @warn 'illegal `#{$z}` value for function';
+        @return false;
+    }
+
+    @if $z > sin(pi()/4) {
+        $complement: true;
+        $z: sqrt(1 - pow($z, 2));
+    }
+
+    $term: $z;
+    $i: 0;
+    $k: 1;
+
+    @while $term > $threshold {
+        $sum: $sum + $term;
+
+        $i: $i + 1;
+        $k: $k*(2*$i - 1)/(2*$i);
+        $j: 2*$i + 1;
+
+        $term: $k*pow($z, $j)/$j;
+    }
+
+    @return convert-angle($sign*(if($complement, pi()/2 - $sum, $sum)), $unit-name);
+}
+
+@function acos($z, $unit-name: deg, $threshold: $default-threshold) {
+    @return convert-angle(pi()/2, $unit-name) - asin($z, $unit-name, $threshold);
+}
+
+@function atan($z, $unit-name: deg, $threshold: $default-threshold) {
+    @return asin($z/sqrt(1 + pow($z, 2)), $unit-name, $threshold);
+}

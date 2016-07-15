@@ -25,9 +25,11 @@ input:not(.button).large {
 	font-size: $input-font-size-large;
 }
 
-.button > .icon {
-	font-size: .8em;
-	margin-left: .3em;
+.button {
+	> .icon {
+		font-size: .8em;
+		margin-left: .3em;
+	}
 }
 
 a {
