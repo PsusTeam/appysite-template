@@ -48,7 +48,7 @@
     &__socials {
         margin-bottom: $paragraph-margin-bottom;
 
-        @include breakpoint(medium) {
+        @include breakpoint(large) {
             margin-bottom: 0;
         }
     }
