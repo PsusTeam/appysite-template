@@ -23,13 +23,18 @@ const $ = gulpLoadPlugins({
 });
 
 let pkg = JSON.parse(fs.readFileSync('./package.json'));
+let appysite = JSON.parse(fs.readFileSync('./appysite.json'));
 let argv = yargs.argv;
 let devBuild = !argv.production;
+let buildPath = argv.path || '';
+
+// for the sake of preprocess template
+appysite.screenshots = appysite.screenshots.toString();
 
 // file locations
 let
     source  = 'source/',
-    build   = 'build/',
+    build   = 'build/' + buildPath.trimRight('/') + '/',
     files = {
         scss   : source + 'scss/',
         js     : source + 'js/',
@@ -67,6 +72,7 @@ let
             imagePath: 'images',
             includePaths: [
                 'bower_components',
+                'bower_components/glidejs/src/sass',
                 'bower_components/foundation-sites/scss',
                 'bower_components/modernizr-mixin/stylesheets'
             ],
@@ -100,7 +106,8 @@ let
             files.libs + 'workaround/ie10-viewport-bug-workaround.js'
         ],
         dependencies: [
-            //'bower_components/jquery/dist/jquery.js'
+            'bower_components/jquery/dist/jquery.js',
+            'bower_components/glidejs/dist/glide.js'
         ],
         foundation: {
             in: [
@@ -128,10 +135,7 @@ let
         watch   : [source + '*.html', files.tmpl + '**/*.html'],
         out     : dest,
         context : {
-            //devBuild   : devBuild,
-            //version    : pkg.version,
-            //stylesheet : css.outputFile,
-            //jsFoot     : js.outputFile,
+            appysite,
             devBuild   : devBuild,
             version    : pkg.version,
             url        : pkg.homepage,
