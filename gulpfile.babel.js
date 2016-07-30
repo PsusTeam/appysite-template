@@ -25,7 +25,7 @@ const $ = gulpLoadPlugins({
 let pkg = JSON.parse(fs.readFileSync('./package.json'));
 let argv = yargs.argv;
 let devBuild = !argv.production;
-let buildPath = argv.path || '';
+let buildPath = argv.path || 'build/';
 let appysitePath = (argv.path || '.') + '/appysite.json';
 let appysite = JSON.parse(fs.readFileSync(appysitePath));
 
@@ -35,7 +35,7 @@ appysite.screenshots = appysite.screenshots.toString();
 // file locations
 let
     source  = 'source/',
-    build   = 'build/' + buildPath.trimRight('/') + '/',
+    build   = buildPath.trimRight('/') + '/',
     files = {
         scss   : source + 'scss/',
         js     : source + 'js/',
