@@ -26,6 +26,7 @@ let pkg = JSON.parse(fs.readFileSync('./package.json'));
 let argv = yargs.argv;
 let devBuild = !argv.production;
 let buildPath = argv.path || 'build/';
+let productionPath = argv.productionPath || 'production';
 let appysitePath = (argv.path || '.') + '/appysite.json';
 let appysite = JSON.parse(fs.readFileSync(appysitePath));
 
@@ -44,7 +45,7 @@ let
         libs   : source + 'libs/',
         tmpl   : source + 'template-parts/'
     },
-    dest = build + (devBuild ? 'development/' : 'production/'),
+    dest = build + (devBuild ? 'development/' : productionPath.trimRight('/') + '/'),
 
     // asset name
     assetName = (pkg.name.replace(/\s+/g, '-').toLowerCase() + '-v' + pkg.version).toLowerCase(),
