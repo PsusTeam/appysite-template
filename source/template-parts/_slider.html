@@ -1,7 +1,17 @@
 <div class="flex flex--align-middle slider">
     <div class="slider__frame">
-        <div class="slider__body">
-            <img src="http://placehold.it/150x250" alt="My awesome app">
+        <div class="slider__body" dir="ltr">
+            <div id="slider" class="glide">
+                <div class="glide__wrapper">
+                    <ul class="glide__track no-margin">
+                        <!-- @foreach $image in appysite.screenshots -->
+                        <li class="glide__slide">
+                            <img src="$image" alt="">
+                        </li>
+                        <!-- @endfor -->
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>

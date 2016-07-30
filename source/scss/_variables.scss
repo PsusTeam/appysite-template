@@ -31,6 +31,9 @@ $slider-padding: 1rem;
 $slider-bg-color: map-get($foundation-palette, asphalt);
 $slider-frame-color: white;
 $slider-frame-padding: 1.85rem 0.5rem 3.25rem;
+$slider-frame-width: rem-calc(150) + 1rem;
+$slider-frame-width-lg: rem-calc(180) + 1rem;
+$slider-frame-width-retina: rem-calc(220) + 1rem;
 $slider-shadow-color: $metafizzy-color;
 
 

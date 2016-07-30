@@ -24,8 +24,17 @@
     &__body {
         position: relative;
         padding: $slider-frame-padding;
+        width: $slider-frame-width;
         border-radius: 0.75rem;
         background-color: $slider-frame-color;
+
+        @include breakpoint(medium) {
+            width: $slider-frame-width-lg;
+        }
+
+        @include breakpoint(retina) {
+            width: $slider-frame-width-retina;
+        }
 
         &::before,
         &::after {
