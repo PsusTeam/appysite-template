@@ -1,6 +1,6 @@
 {
-  "name": "appysite-default-theme",
-  "version": "0.5.0",
+  "name": "appysite-template",
+  "version": "1.0.0",
   "description": "The default theme of the AppySite service",
   "main": "index.html",
   "scripts": {
