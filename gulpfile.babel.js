@@ -23,10 +23,11 @@ const $ = gulpLoadPlugins({
 });
 
 let pkg = JSON.parse(fs.readFileSync('./package.json'));
-let appysite = JSON.parse(fs.readFileSync('./appysite.json'));
 let argv = yargs.argv;
 let devBuild = !argv.production;
 let buildPath = argv.path || '';
+let appysitePath = (argv.path || '.') + '/appysite.json';
+let appysite = JSON.parse(fs.readFileSync(appysitePath));
 
 // for the sake of preprocess template
 appysite.screenshots = appysite.screenshots.toString();
